@@ -127,7 +127,7 @@ image::../images/vmware.createvm2.PNG[]
 
 == Mise à jour de l'ESXi
 
-La procedure est assez facile, il faut tout d'abord recuperer le patch en allant https://my.vmware.com/web/vmware/login#search[ici] (il vous faudra surement vous connecter avec votre compte vmware). Sur la liste "Select a Product" mettez "ESXi (Embedded and Installable)", en face laisser la derniere version de vmware et faites "Search". Puis télécharger le patch voulu (en générale le dernier). Le build number (le premier numéro pas celui commencant par KB) vous donne la version du patch que vous pouvez comparer avec votre build number.
+La procedure est assez facile, il faut tout d'abord recuperer le patch en allant https://my.vmware.com/group/vmware/patch#search[ici] (il vous faudra surement vous connecter avec votre compte vmware). Sur la liste "Select a Product" mettez "ESXi (Embedded and Installable)", en face laisser la derniere version de vmware et faites "Search". Puis télécharger le patch voulu (en générale le dernier). Le build number (le premier numéro pas celui commencant par KB) vous donne la version du patch que vous pouvez comparer avec votre build number.
 
 Ensuite transferez le zip sur un de vos datastore et faite : 
 
