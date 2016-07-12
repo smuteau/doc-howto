@@ -1,0 +1,35 @@
+= Mise à jour manuel de jeedom
+
+Nous allons voir ici comment passer une mise à jour manuellement sur Jeedom
+
+== Prérequis
+
+- savoir se connecter en SSH à jeedom
+- connaitre les identifants SSH (voir documentation d'installation)
+- avoir internet sur la box jeedom
+
+[IMPORTANT]
+Pensez bien à faire et récuperer un backup avant toute mise à jour manuel
+
+== Téléchargement et décompression
+
+En ssh faites : 
+
+----
+sudo su -
+cd /root
+wget https://github.com/jeedom/core/archive/stable.zip
+unzip stable.zip
+cp -R core-stable/* /var/www/html
+----
+
+== Passage des mises à jour
+
+Toujours en ssh : 
+
+----
+sudo su -
+php /var/www/html/install/install.php mode=force
+chmod 775 -R /var/www/html
+chown www-data:www-data -R /var/www/html
+----
