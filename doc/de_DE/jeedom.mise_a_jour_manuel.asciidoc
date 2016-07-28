@@ -33,3 +33,6 @@ php /var/www/html/install/install.php mode=force
 chmod 775 -R /var/www/html
 chown www-data:www-data -R /var/www/html
 ----
+
+[IMPORTANT]
+Si votre installation de jeedom est un peu ancienne il faut remplacer tous les /var/www/html par /usr/share/nginx/www/jeedom
