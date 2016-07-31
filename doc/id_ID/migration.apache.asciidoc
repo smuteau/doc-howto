@@ -3,27 +3,27 @@
 == Pourquoi ?
 
 - Apache va devenir petit à petit la norme avec Jeedom
-- Permet d'avoir les dernieres mise à jour de securité au niveau de l'accès aux fichiers (grace au .htaccess) lors des mises à jour de jeedom
-- Corrige certain soucis d'accès et de stabilité (notamment pour ceux qui ont beaucoup de caméra)
-- Améliore les performances global de jeedom
+- Permet d'avoir les dernières mises à jour de securité au niveau de l'accès aux fichiers (grâce au .htaccess) lors des mises à jour de Jeedom
+- Corrige certains soucis d'accès et de stabilité (notamment pour ceux qui ont beaucoup de caméras)
+- Améliore les performances globalles de Jeedom.
 
 == Pré-requis
 
 - Savoir se connecter en SSH sur la box (vous trouverez les identifiants sur la documentation d'installation)
-- Etre connecté à internet
+- Etre connecté à internet.
 
 [IMPORTANT]
-En cas de soucis l'équipe Jeedom ne pourra etre tenu responsable et pourra refuser toute demande de support. La manipulation est à vos risques et périls
+En cas de soucis l'équipe Jeedom ne pourra être tenue responsable et pourra refuser toute demande de support. La manipulation est à vos risques et périls.
 
 [IMPORTANT]
-Attention certain plugin non officiel ne sont pas compatible Apache, renseignez vous bien avant.
+Attention certains plugins non officiels ne sont pas compatibles Apache, renseignez vous bien avant.
 
 == Comment faire
 
-=== Désactivation des services jeedom et de nginx
+=== Désactivation des services Jeedom et nginx
 
-Dans jeedom il faut aller sur chaque plugin ayant un démon, puis désactiver la gestion automatique du démon et couper celui-ci. 
-Il faut ensuite dans le moteur de tâche désactiver toute les taches (il y un bouton de désactivation général) et dans les scénarios désactiver tout les scénarios (il y un bouton de désactivation général)
+Dans Jeedom, il faut aller sur chaque plugin ayant un démon, puis désactiver la gestion automatique du démon et couper celui-ci. 
+Il faut ensuite, dans le moteur de tâches, désactiver toutes les tâches (il y un bouton de désactivation générale) et dans les scénarios, désactiver tous les scénarios (il y un bouton de désactivation générale).
 
 ----
 systemctl stop cron 
@@ -48,7 +48,7 @@ rm /var/www/html/index.html
 ----
 
 [NOTE]
-Si lors de l'installation le systeme vous demande si vous voulez ou non garder une version modifié d'un fichier faites : "Keep the local version currently installed"
+Si lors de l'installation le système vous demande si vous voulez ou non garder une version modifiée d'un fichier, faites : "Keep the local version currently installed".
 
 === Copie de Jeedom
 
@@ -65,7 +65,7 @@ chown www-data:www-data -R /var/www/html
 systemctl start mysql
 ----
 
-Vous devriez maintenant pouvoir accèder à jeedom depuis la meme URL qu'avant. Si c'est bon vous pouvez continuer sinon il ne faut surtout pas faire la suite
+Vous devriez maintenant pouvoir accèder à Jeedom depuis la même URL qu'avant. Si c'est bon vous pouvez continuer sinon il ne faut surtout pas faire la suite.
 
 === Mise à jour de la crontab
 
@@ -75,7 +75,7 @@ Faire :
 crontab -e
 ----
 
-Puis mettre à jour le chemin d'accès à jeedom, remplacer : 
+Puis mettre à jour le chemin d'accès à Jeedom, remplacer : 
 
 ----
 * * * * * su --shell=/bin/bash - www-data -c '/usr/bin/php /usr/share/nginx/www/jeedom/core/php/jeeCron.php' >> /dev/null 2>&1
@@ -103,10 +103,10 @@ systemctl enable apache2
 systemctl start cron
 ----
 
-Ensuite connectez vous à votre jeedom et réactiver le moteur de tache, les scénarios. Vous pouvez aussi relancer les démons.
+Ensuite connectez vous à votre Jeedom et réactiver le moteur de tâches et les scénarios. Vous pouvez aussi relancer les démons.
 
 [IMPORTANT]
-Il est conseiller après la migration de lancer une mise à jour de jeedom (meme si il ne vous propose rien)
+Il est conseillé après la migration de lancer une mise à jour de Jeedom (même si il ne vous propose rien).
 
 
 
