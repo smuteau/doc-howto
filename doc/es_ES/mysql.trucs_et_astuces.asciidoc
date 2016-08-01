@@ -1,0 +1,19 @@
+= Trucs et astuces sur VMware
+
+Pas vraiment un howto ici mais plus un recueils de trucs et astuces sur MySQL
+
+== Flush method direct
+
+Editez le fichier /etc/mysql/mysql.conf.d/mysqld.cnf et ajoutez dedans : 
+
+----
+innodb_flush_method = O_DIRECT
+----
+
+== Désactiver le performance schéma
+
+Editez le fichier /etc/mysql/mysql.conf.d/mysqld.cnf et ajoutez dedans : 
+
+----
+performance_schema=OFF
+----
